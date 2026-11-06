@@ -1,1 +1,50 @@
-/* Start coding here */
+/* ===== กำหนดสีทั้งหมดที่ root ===== */
+:root {
+    --bg-color-1: hsl(0, 100%, 70%);        /* สีพื้นหลัง 1 (แดงอมชมพู) */
+    --bg-color-2: hsl(240, 100%, 70%);      /* สีพื้นหลัง 2 (น้ำเงินอมม่วง) */
+    --box-color: hsla(0, 50%, 100%, 0.5);   /* สีกล่อง (ขาวโปร่งแสง 50%) */
+  }
+  
+  /* รีเซ็ตค่าพื้นฐาน */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100vh;
+    font-family: "Times New Roman", serif;
+  
+    /* GRADIENT: เฉียงจากซ้ายล่าง (สี 1) ไปขวาบน (สี 2)
+       "to top right" = ทิศทางไปทางมุมขวาบน */
+    background: linear-gradient(to top right, var(--bg-color-1), var(--bg-color-2));
+  
+    /* FLEX: จัดกล่องให้อยู่กึ่งกลางจอทั้งแนวนอนและแนวตั้ง */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* ===== กล่องกลางจอ ===== */
+  .box {
+    width: 90%;
+    max-width: 400px;
+    padding: 16px 14px;
+    border-radius: 6px;
+  
+    /* ใช้สี hsla ที่มีความโปร่งใส (ค่าสุดท้าย 0.5)
+       ทำให้มองเห็น gradient ด้านหลังทะลุผ่านมาได้ */
+    background: var(--box-color);
+    text-align: center;
+  }
+  
+  .box h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .box p {
+    font-size: 13px;
+    line-height: 1.35;
+  }
